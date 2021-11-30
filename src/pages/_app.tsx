@@ -7,9 +7,11 @@ import { SearchContextProvider } from "../context/SearchContext"
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<SearchContextProvider>
-			<Header />
-			<Component {...pageProps} />
-			<Footer />
+			<div className="bg-gray-300">
+				<Header />
+				<Component {...pageProps} />
+				<Footer />
+			</div>
 		</SearchContextProvider>
 	)
 }

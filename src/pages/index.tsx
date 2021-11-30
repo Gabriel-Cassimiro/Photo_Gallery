@@ -1,8 +1,9 @@
 import axios from "axios"
 import React, { useState, useEffect } from "react"
-import { ImageCard } from "../components/ImageCard"
 
+import { ImageCard } from "../components/ImageCard"
 import { useSearchContext } from "../context/SearchContext"
+import { Pagination } from "../components/Pagination"
 
 export interface Photos {
 	id: number
@@ -28,6 +29,7 @@ export interface Photos {
 
 interface Data {
 	next_page: string
+	prev_page: string
 	page: number
 	per_page: number
 	photos: Photos[]
@@ -35,23 +37,23 @@ interface Data {
 }
 
 export default function Home() {
-	const { term } = useSearchContext()
+	const { setPrevious, setNext, currentUrl } = useSearchContext()
 	const [images, setImages] = useState<Photos[]>([])
 	const [isLoading, setIsLoading] = useState(true)
 
 	useEffect(() => {
 		const controller = new AbortController()
-		const url = "https://api.pexels.com/v1/curated?&page=1&per_page=5"
-		//const url = currentUrl + "&page=" + search + "&per_page=" + perPage
 		async function fetchPhotos() {
 			await axios
-				.get<Data>(url, {
+				.get<Data>(currentUrl, {
 					headers: {
 						Authorization: process.env.PEXELS_API_KEY as string
 					}
 				})
 				.then(response => {
 					setImages(response.data.photos)
+					setPrevious(response.data.prev_page)
+					setNext(response.data.next_page)
 					setIsLoading(false)
 				})
 				.catch(err =>
@@ -60,13 +62,15 @@ export default function Home() {
 		}
 		fetchPhotos()
 		controller.abort()
-	}, [term])
+	}, [setNext, setPrevious, currentUrl])
 
 	return (
 		<div className="container mx-auto">
 			{!isLoading && images.length === 0 && (
 				<h1 className="text-5xl text-center mx-auto mt-32">No Images Found</h1>
 			)}
+
+			<Pagination />
 
 			{isLoading ? (
 				<h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>

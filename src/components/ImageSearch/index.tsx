@@ -2,12 +2,19 @@ import React, { useState } from "react"
 import { useSearchContext } from "../../context/SearchContext"
 
 export const ImageSearch = () => {
-	const { setTerm } = useSearchContext()
+	const { setCurrentUrl, pages, perPage } = useSearchContext()
 	const [text, setText] = useState("")
 
 	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault()
-		setTerm(text)
+		setCurrentUrl(
+			"https://api.pexels.com/v1/search?query=" +
+				text +
+				"&page=" +
+				pages +
+				"&per_page=" +
+				perPage
+		)
 	}
 
 	return (
