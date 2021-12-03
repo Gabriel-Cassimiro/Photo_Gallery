@@ -1,24 +1,25 @@
 import { useSearchContext } from "../../context/SearchContext"
 
 export function Pagination() {
-	const { nextPage, prevPage, setCurrentUrl } = useSearchContext()
+	const { setCurrentUrl, images } = useSearchContext()
+	const { prev_page, next_page } = images
 
 	return (
 		<div className="flex justify-center">
-			{prevPage ? (
+			{prev_page ? (
 				<button
 					className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-					onClick={() => setCurrentUrl(prevPage)}
+					onClick={() => setCurrentUrl(prev_page)}
 				>
 					Previous
 				</button>
 			) : (
 				""
 			)}
-			{nextPage ? (
+			{next_page ? (
 				<button
 					className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-					onClick={() => setCurrentUrl(nextPage)}
+					onClick={() => setCurrentUrl(next_page)}
 				>
 					Next
 				</button>
