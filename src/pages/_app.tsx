@@ -4,6 +4,7 @@ import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { SearchContextProvider } from "../context/SearchContext"
 import { useEffect } from "react"
+import SimpleReactLightbox from "simple-react-lightbox"
 
 function MyApp({ Component, pageProps }: AppProps) {
 	useEffect(() => {
@@ -12,9 +13,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 	return (
 		<SearchContextProvider>
-			<div className="bg-gray-300 h-full flex flex-col justify-between">
+			<div className=" h-full flex flex-col justify-between">
 				<Header />
-				<Component {...pageProps} />
+				<SimpleReactLightbox>
+					<Component {...pageProps} />
+				</SimpleReactLightbox>
 				<Footer />
 			</div>
 		</SearchContextProvider>

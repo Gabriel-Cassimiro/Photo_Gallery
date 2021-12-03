@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useSearchContext } from "../../context/SearchContext"
 
 export const ImageSearch = () => {
-	const { setCurrentUrl, pages, perPage } = useSearchContext()
+	const { setCurrentUrl, pages, perPage, setSearchTitle } = useSearchContext()
 	const [text, setText] = useState("")
 
 	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -15,6 +15,7 @@ export const ImageSearch = () => {
 				"&per_page=" +
 				perPage
 		)
+		setSearchTitle(text)
 	}
 
 	return (
