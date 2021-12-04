@@ -8,7 +8,7 @@ import { useFetch } from "../hooks/useGet"
 import { Options } from "../utils/lightboxOptions"
 
 export default function Home() {
-	const { currentUrl, setImages, images, searchTitle } = useSearchContext()
+	const { currentUrl, setImages, images } = useSearchContext()
 	const { data, error } = useFetch<Data>(currentUrl)
 
 	if (data) {
@@ -27,23 +27,15 @@ export default function Home() {
 
 	return (
 		<div className="container mx-auto">
-			<Pagination />
-			{console.log(data)}
-
 			{images.photos?.length === 0 && (
 				<h2 className="text-5xl text-center mx-auto ">No Images Found</h2>
-			)}
-
-			{images.photos?.length > 0 && searchTitle && (
-				<h2 className="text-5xl text-center mx-auto capitalize my-4">
-					{searchTitle} Images
-				</h2>
 			)}
 
 			{!data ? (
 				<h2 className="text-2xl text-center mx-auto mt-12">Loading...</h2>
 			) : (
 				<SRLWrapper options={Options}>
+					<Pagination />
 					<div className="grid grid-cols-4 gap-4">
 						{images.photos?.map(image => (
 							<ImageCard key={image.id} image={image} />
