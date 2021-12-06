@@ -15,7 +15,8 @@ export const ImageCard = ({ image }: ImageCardProps) => {
 				height={450}
 				width={450}
 				alt={`Photo by ${image.photographer}`}
-				className=" object-cover"
+				title="Click image to open Gallery"
+				className=" object-cover cursor-pointer"
 			/>
 			<div className="px-6 py-4">
 				<div className="font-bold text-purple-500 text-xl mb-2">

@@ -11,15 +11,17 @@ export default function Home() {
 	const { currentUrl, setImages, images } = useSearchContext()
 	const { data, error } = useFetch<Data>(currentUrl)
 
-	if (data) {
-		setImages(data)
-	}
+	useEffect(() => {
+		if (data) {
+			setImages(data)
+		}
+	}, [data, setImages])
 
 	if (error) {
 		return (
 			<div className="container mx-auto">
 				<h2 className="text-5xl text-center mx-auto mt-32">
-					Falha ao carregar as imagens
+					Failed to load images
 				</h2>
 			</div>
 		)
