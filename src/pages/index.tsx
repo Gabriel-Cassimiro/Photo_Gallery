@@ -28,7 +28,7 @@ export default function Home() {
 	}
 
 	return (
-		<div className="container mx-auto">
+		<div className=" mx-auto py-2 ">
 			{images.photos?.length === 0 && (
 				<h2 className="text-5xl text-center mx-auto ">No Images Found</h2>
 			)}

@@ -36,8 +36,8 @@ interface SearchContextProps {
 	setCurrentUrl: React.Dispatch<React.SetStateAction<string>>
 	images: Data
 	setImages: React.Dispatch<React.SetStateAction<Data>>
-	pages: number
-	perPage: number
+	perPage: string
+	setPerPage: React.Dispatch<React.SetStateAction<string>>
 	setSearchTitle: React.Dispatch<React.SetStateAction<string>>
 	searchTitle: string
 }
@@ -52,11 +52,10 @@ export function SearchContextProvider({
 	children
 }: SearchContextProviderProps) {
 	const [images, setImages] = useState({} as Data)
-	const [pages, setPages] = useState(1)
-	const [perPage, setPerPage] = useState(3)
-	const [searchTitle, setSearchTitle] = useState("")
+	const [perPage, setPerPage] = useState("5")
+	const [searchTitle, setSearchTitle] = useState("Curated")
 	const [currentUrl, setCurrentUrl] = useState(
-		`https://api.pexels.com/v1/curated?&page=${pages}&per_page=${perPage}`
+		"https://api.pexels.com/v1/curated?&page=1"
 	)
 
 	return (
@@ -64,8 +63,8 @@ export function SearchContextProvider({
 			value={{
 				currentUrl,
 				setCurrentUrl,
-				pages,
 				perPage,
+				setPerPage,
 				images,
 				setImages,
 				searchTitle,

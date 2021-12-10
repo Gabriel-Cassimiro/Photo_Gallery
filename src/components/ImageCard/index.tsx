@@ -1,22 +1,26 @@
-import React from "react"
 import Image from "next/image"
 
+import React, { useState } from "react"
 import { Photos } from "../../context/SearchContext"
+import { SelectImageSize } from "../SelectImageSize"
 
 interface ImageCardProps {
 	image: Photos
 }
 
-export const ImageCard = ({ image }: ImageCardProps) => {
+export function ImageCard({ image }: ImageCardProps) {
+	const [imageSrc, setImageSrc] = useState(image.src.original)
+
 	return (
-		<div className="max-w-sm  rounded  shadow-lg">
+		<div className=" rounded  shadow-lg">
+			<SelectImageSize image={image.src} setImageSrc={setImageSrc} />
 			<Image
-				src={image.src.original}
+				src={imageSrc}
 				height={450}
 				width={450}
 				alt={`Photo by ${image.photographer}`}
-				title="Click image to open Gallery"
-				className=" object-cover cursor-pointer"
+				title="Click Photo to open Gallery"
+				className=" object-cover cursor-pointer transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
 			/>
 			<div className="px-6 py-4">
 				<div className="font-bold text-purple-500 text-xl mb-2">
