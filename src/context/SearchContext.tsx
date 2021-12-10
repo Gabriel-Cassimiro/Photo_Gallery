@@ -52,7 +52,7 @@ export function SearchContextProvider({
 	children
 }: SearchContextProviderProps) {
 	const [images, setImages] = useState({} as Data)
-	const [perPage, setPerPage] = useState("5")
+	const [perPage, setPerPage] = useState("20")
 	const [searchTitle, setSearchTitle] = useState("Curated")
 	const [currentUrl, setCurrentUrl] = useState(
 		"https://api.pexels.com/v1/curated?&page=1"

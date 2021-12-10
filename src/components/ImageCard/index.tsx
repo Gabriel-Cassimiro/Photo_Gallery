@@ -10,18 +10,23 @@ interface ImageCardProps {
 
 export function ImageCard({ image }: ImageCardProps) {
 	const [imageSrc, setImageSrc] = useState(image.src.original)
+	const imageHeight = image.height / 3
+	const imageWidth = image.width / 3
+
+	const imageLink = () => {
+		return <a href={image.photographer_url}>{image.photographer}</a>
+	}
 
 	return (
-		<>
-			{/* <SelectImageSize image={image.src} setImageSrc={setImageSrc} /> */}
+		<div>
 			<Image
 				src={imageSrc}
-				height={450}
-				width={450}
+				height={imageHeight}
+				width={imageWidth}
 				alt={`Photo by ${image.photographer}`}
 				title="Click Photo to open Gallery"
-				className={`w-full object-cover cursor-pointer bg-[${image.avg_color}] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110`}
+				className="w-full cursor-pointer bg-teal-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
 			/>
-		</>
+		</div>
 	)
 }

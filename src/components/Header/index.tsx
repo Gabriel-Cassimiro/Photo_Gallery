@@ -15,7 +15,7 @@ export function Header() {
 
 	return (
 		<nav className="flex  items-end justify-around bg-white py-4 px-12 shadow border-solid border-t-2 border-blue-700">
-			<div className="flex w-2/3 items-center shrink-0 gap-4  border-b-0 ">
+			<div className=" hidden sm:flex w-2/3 items-center shrink-0 gap-4  border-b-0 ">
 				<Image
 					src="/images/logo.svg"
 					height="40"

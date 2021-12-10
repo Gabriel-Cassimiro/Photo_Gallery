@@ -1,5 +1,4 @@
 import { useSearchContext } from "../../context/SearchContext"
-import { Select } from "../Select"
 
 export function Pagination() {
 	const { setCurrentUrl, images } = useSearchContext()

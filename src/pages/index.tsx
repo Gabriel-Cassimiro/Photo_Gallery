@@ -6,6 +6,7 @@ import { useSearchContext, Data } from "../context/SearchContext"
 import { Pagination } from "../components/Pagination"
 import { useFetch } from "../hooks/useGet"
 import { Options } from "../utils/lightboxOptions"
+import { LoaderIcon } from "../components/LoaderIcon"
 
 export default function Home() {
 	const { currentUrl, setImages, images } = useSearchContext()
@@ -34,11 +35,12 @@ export default function Home() {
 			)}
 
 			{!data ? (
-				<h2 className="text-2xl text-center mx-auto mt-12">Loading...</h2>
+				<LoaderIcon />
 			) : (
 				<SRLWrapper options={Options}>
 					<Pagination />
 					<div className="columns-3xs gap-4 ">
+						{console.log(currentUrl)}
 						{images.photos?.map(image => (
 							<ImageCard key={image.id} image={image} />
 						))}
