@@ -28,7 +28,7 @@ export default function Home() {
 	}
 
 	return (
-		<div className=" mx-auto py-2 ">
+		<div className=" py-2 px-12 ">
 			{images.photos?.length === 0 && (
 				<h2 className="text-5xl text-center mx-auto ">No Images Found</h2>
 			)}
@@ -38,7 +38,7 @@ export default function Home() {
 			) : (
 				<SRLWrapper options={Options}>
 					<Pagination />
-					<div className="grid grid-cols-4 gap-4">
+					<div className="columns-3xs gap-4 ">
 						{images.photos?.map(image => (
 							<ImageCard key={image.id} image={image} />
 						))}

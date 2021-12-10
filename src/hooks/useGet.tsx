@@ -3,11 +3,14 @@ import axios from "axios"
 import { useSearchContext } from "../context/SearchContext"
 
 async function fetch(url: string) {
+	const controller = new AbortController()
 	const response = await axios.get(url, {
 		headers: {
 			Authorization: process.env.PEXELS_API_KEY as string
 		}
 	})
+	controller.abort()
+
 	return response.data
 }
 
