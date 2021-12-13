@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Select component Should render correctly 1`] = `
+<div>
+  <div
+    class="w-auto ml-auto"
+  >
+    <label
+      class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+      for="select-pages"
+    >
+      Photos per page
+    </label>
+    <select
+      class=" w-full font-bold border border-gray-200 text-gray-700 py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+      id="select-pages"
+    >
+      <option
+        selected=""
+        value="20"
+      >
+        20
+      </option>
+      <option
+        value="40"
+      >
+        40
+      </option>
+      <option
+        value="60"
+      >
+        60
+      </option>
+      <option
+        value="80"
+      >
+        80
+      </option>
+    </select>
+  </div>
+</div>
+`;

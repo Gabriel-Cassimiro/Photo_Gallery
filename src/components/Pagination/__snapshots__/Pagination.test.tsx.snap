@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Pagination component Should render correctly 1`] = `
+<div>
+  <div
+    class="flex justify-center my-2 gap-2"
+  >
+    
+    
+  </div>
+</div>
+`;

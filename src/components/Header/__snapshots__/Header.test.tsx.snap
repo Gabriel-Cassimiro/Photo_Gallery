@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Header component Should render correctly 1`] = `
+<div>
+  <nav
+    class="flex items-end justify-around bg-white py-4 px-12 shadow border-solid border-t-2 border-blue-700"
+  >
+    <div
+      class=" hidden sm:flex w-2/3 items-center shrink-0 gap-4 border-b-0 "
+    >
+      <span
+        style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+      >
+        <span
+          style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+            style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+          />
+        </span>
+        <img
+          alt="Photo gallery logo"
+          data-nimg="intrinsic"
+          decoding="async"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+        />
+        <noscript />
+      </span>
+      <button>
+        <span
+          class="font-semibold text-xl "
+        >
+          Photo Gallery
+        </span>
+      </button>
+      <div
+        class="w-auto ml-auto"
+      >
+        <label
+          class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          for="select-pages"
+        >
+          Photos per page
+        </label>
+        <select
+          class=" w-full font-bold border border-gray-200 text-gray-700 py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="select-pages"
+        >
+          <option
+            selected=""
+            value="20"
+          >
+            20
+          </option>
+          <option
+            value="40"
+          >
+            40
+          </option>
+          <option
+            value="60"
+          >
+            60
+          </option>
+          <option
+            value="80"
+          >
+            80
+          </option>
+        </select>
+      </div>
+    </div>
+    <div
+      class="max-w-xs rounded overflow-hidden "
+    >
+      <form
+        class="w-full max-w-sm"
+      >
+        <div
+          class="flex items-center border-b-2 border-teal-500 py-1"
+        >
+          <input
+            class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+            placeholder="Search Photo Term..."
+            type="text"
+            value=""
+          />
+          <button
+            class="shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
+  </nav>
+</div>
+`;
