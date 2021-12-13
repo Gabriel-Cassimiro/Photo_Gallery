@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { useSearchContext } from "../../context/SearchContext"
 
-export const ImageSearch = () => {
-	const { setCurrentUrl, perPage, setSearchTitle } = useSearchContext()
+export function ImageSearch() {
+	const { setCurrentUrl, setSearchTitle } = useSearchContext()
 	const [text, setText] = useState("")
 
 	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

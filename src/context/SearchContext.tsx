@@ -19,7 +19,6 @@ export interface Photos {
 		landscape: string
 		tiny: string
 	}
-	liked: false
 }
 
 export interface Data {
